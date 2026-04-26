@@ -58,11 +58,6 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=60s --retries=5 \
 #   --threads 4        4 threads per worker for concurrent I/O
 #   --timeout 120      allow up to 2 min for large files
 #   --worker-class gthread
-CMD gunicorn wsgi:application \
-        --workers 1 \
-        --threads 4 \
-        --timeout 120 \
-        --bind "0.0.0.0:${PORT}" \
-        --log-level info \
-        --access-logfile - \
-        --error-logfile -
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+CMD ["/bin/sh", "/start.sh"]
