@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Local storage
+uploads/
+outputs/
+{static,templates,uploads,outputs,core}/
+
+# Env files
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Temp audio / test files
+*.wav
+*.mp3
+*.mid
+*.ogg

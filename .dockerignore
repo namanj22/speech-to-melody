@@ -1,0 +1,12 @@
+**/__pycache__
+**/*.pyc
+**/*.pyo
+.git
+.gitignore
+.env
+*.md
+uploads/
+outputs/
+{static,templates,uploads,outputs,core}/
+demo.py
+cli.py

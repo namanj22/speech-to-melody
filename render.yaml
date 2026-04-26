@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: speech-to-melody
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    
+    # Render's free tier gives you 512MB RAM — enough for librosa
+    plan: free
+
+    envVars:
+      - key: MPLBACKEND
+        value: Agg
+      - key: STORAGE_DIR
+        value: /tmp/speech_melody
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+    healthCheckPath: /
+
+    # Auto-deploy on every push to main
+    autoDeploy: true
